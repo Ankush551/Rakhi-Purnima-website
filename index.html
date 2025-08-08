@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
+            background: linear-gradient(to right, #fff1f8, #ffe5ec);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -22,40 +22,46 @@
             align-items: center;
             padding: 20px;
             overflow-x: hidden;
+            position: relative;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
             text-align: center;
-            padding: 40px 20px;
+            padding: 40px 25px;
+            border-radius: 20px;
+            background: #fff5f9;
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+            position: relative;
+            z-index: 2;
         }
 
         .main-heading {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            color: #e91e63;
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(30px);
+            color: #d81b60;
+            margin-bottom: 35px;
             animation: fadeInSlideUp 1s ease-out 0.5s forwards;
         }
 
         .rakhi-image {
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             margin: 0 auto 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
-            opacity: 0;
-            transform: translateY(30px);
+            border-radius: 50%;
+            box-shadow: 0 12px 25px rgba(255, 105, 180, 0.25);
+            background: #fff0f6;
             animation: fadeInSlideUp 1s ease-out 1.5s forwards;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: #e91e63;
+            overflow: hidden;
+        }
+
+        .rakhi-image img {
+            width: 100%;
+            height: auto;
         }
 
         .wishes-section {
@@ -63,50 +69,43 @@
         }
 
         .wish {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 400;
-            color: #c2185b;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            color: #ad1457;
+            line-height: 1.9;
+            margin-bottom: 25px;
             opacity: 0;
             transform: translateY(30px);
         }
 
         .wish:nth-child(1) {
-            animation: fadeInSlideUp 1s ease-out 2.5s forwards;
+            animation: fadeInSlideUp 1s ease-out 1.5s forwards;
         }
 
         .wish:nth-child(2) {
-            animation: fadeInSlideUp 1s ease-out 3s forwards;
+            animation: fadeInSlideUp 1s ease-out 2s forwards;
         }
 
         .continue-button {
-            background: linear-gradient(135deg, #f8bbd9, #e91e63);
+            background: linear-gradient(135deg, #ec407a, #d81b60);
             color: white;
             font-family: 'Poppins', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
-            padding: 15px 40px;
+            padding: 15px 45px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInSlideUp 1s ease-out 3.5s forwards;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
             text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: inline-block;
+            animation: fadeInSlideUp 1s ease-out 2.5s forwards;
         }
 
         .continue-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(233, 30, 99, 0.4);
-            background: linear-gradient(135deg, #e91e63, #c2185b);
-        }
-
-        .continue-button:active {
-            transform: translateY(-1px);
+            transform: translateY(-5px);
+            box-shadow: 0 14px 40px rgba(233, 30, 99, 0.4);
         }
 
         @keyframes fadeInSlideUp {
@@ -116,47 +115,6 @@
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-heading {
-                font-size: 2.2rem;
-                margin-bottom: 30px;
-            }
-
-            .rakhi-image {
-                width: 250px;
-                height: 250px;
-                font-size: 3rem;
-            }
-
-            .wish {
-                font-size: 1.1rem;
-                padding: 0 10px;
-            }
-
-            .continue-button {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-heading {
-                font-size: 1.8rem;
-            }
-
-            .rakhi-image {
-                width: 200px;
-                height: 200px;
-                font-size: 2.5rem;
-            }
-
-            .wish {
-                font-size: 1rem;
-            }
-        }
-
-        /* Decorative elements */
         .decorative-hearts {
             position: absolute;
             top: 0;
@@ -164,48 +122,39 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
+            z-index: 1;
         }
 
         .heart {
             position: absolute;
-            color: #fce4ec;
-            font-size: 2rem;
-            opacity: 0.3;
+            color: #f8bbd9;
+            font-size: 2.5rem;
+            opacity: 0.4;
             animation: float 6s ease-in-out infinite;
         }
 
-        .heart:nth-child(1) {
-            top: 10%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-
-        .heart:nth-child(2) {
-            top: 70%;
-            right: 20%;
-            animation-delay: 2s;
-        }
-
-        .heart:nth-child(3) {
-            top: 40%;
-            left: 10%;
-            animation-delay: 4s;
-        }
-
-        .heart:nth-child(4) {
-            top: 20%;
-            right: 15%;
-            animation-delay: 1s;
-        }
+        .heart:nth-child(1) { top: 8%; left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { top: 65%; right: 15%; animation-delay: 2s; }
+        .heart:nth-child(3) { top: 35%; left: 5%; animation-delay: 4s; }
+        .heart:nth-child(4) { top: 20%; right: 10%; animation-delay: 1s; }
+        .heart:nth-child(5) { top: 80%; left: 20%; animation-delay: 3s; }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .main-heading { font-size: 2.4rem; }
+            .rakhi-image { width: 260px; height: 260px; }
+            .wish { font-size: 1.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .main-heading { font-size: 2rem; }
+            .rakhi-image { width: 200px; height: 200px; }
+            .wish { font-size: 1rem; }
+            .continue-button { padding: 12px 30px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -213,23 +162,24 @@
     <div class="decorative-hearts">
         <div class="heart">💕</div>
         <div class="heart">💖</div>
-        <div class="heart">💕</div>
-        <div class="heart">💖</div>
+        <div class="heart">💞</div>
+        <div class="heart">💓</div>
+        <div class="heart">💗</div>
     </div>
 
     <div class="container">
         <h1 class="main-heading">Happy Rakhi Purnima, Didi ❤️</h1>
-        
+
         <div class="rakhi-image">
-    <img src="pic1.jpg" alt="Rakhi" style="width:80%; height:auto; border-radius:15px;">
-</div>
-        <div class="wishes-section">
-            <p class="wish">No matter the distance, our bond stays strong.<br>Wishing you joy, love, and unlimited chocolates! 🍫</p>
-            <p class="wish">May this Rakhi Purnima bring you endless happiness<br>and strengthen our beautiful sibling bond forever! 💕</p>
+            <img src="pic1.jpg" alt="Rakhi">
         </div>
-        
-        <a href="card.html" class="continue-button">Click to Continue</a>
+
+        <div class="wishes-section">
+            <p class="wish">Distance can never weaken our love. Happy Rakhi, my forever protector and partner-in-crime! 🎀</p>
+            <p class="wish">May your days be filled with laughter, joy, and boundless success. Raksha Bandhan blessings always! 🌸</p>
+        </div>
+
+        <a href="card.html" class="continue-button">Click to Continue 💌</a>
     </div>
 </body>
-
 </html>
